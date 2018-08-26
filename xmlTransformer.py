@@ -6,7 +6,7 @@ from flask_restful import Resource, Api
 
 __author__='Shafin Thiyam'
 
-class xml_processsing():
+class xml_processsing(Resource):
 
     def __init__(self,xsl,input_xml):
         self.xsl=xsl
