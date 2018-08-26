@@ -5,4 +5,4 @@ import xmlTransformer
 app=Flask(__name__)
 api=Api(app)
 
-api.add_resource()
+api.add_resource(xmlTransformer.xml_processsing)
