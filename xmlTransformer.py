@@ -6,7 +6,7 @@ from flask_restful import Resource, Api
 
 __author__='Shafin Thiyam'
 
-class xml_processsing(Resource):
+class xmlTransformer(object):
 
     def __init__(self,xsl,input_xml,output_xml):
         self.xsl=xsl
@@ -23,7 +23,7 @@ if __name__=='__main__':
         xsl= sys.argv[1]
         inputs=sys.argv[2]
         outputs=sys.argv[3]
-        transform=xml_processsing(xsl,inputs,outputs)
+        transform=xmlTransformer(xsl,inputs,outputs)
         transform.tranformation()
         print("Transformation Done")
     else:
