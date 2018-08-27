@@ -18,7 +18,7 @@ class xmlTransformer(object):
         os.system("java net.sf.saxon.Transform -s:{0} -xsl:{1} -o:{2}".format(self.input_xml,self.xsl,self.output_xml))
 
 if __name__=='__main__':
-    if len(sys.argv) == 3:
+    if len(sys.argv) == 4:
         print("processing started...")
         xsl= sys.argv[1]
         inputs=sys.argv[2]

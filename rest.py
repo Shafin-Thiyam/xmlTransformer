@@ -34,7 +34,7 @@ if len(sys.argv) > 2:
 else:
     build = 0
 
-class Trans:
+class Trans(object):
 
     def POST(self, publication):
 
