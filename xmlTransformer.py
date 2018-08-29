@@ -6,7 +6,7 @@ from flask_restful import Resource, Api
 
 __author__='Shafin Thiyam'
 
-class xmlTransformer():
+class xmlTransformer(object):
 
     def __init__(self,xsl,input_xml,output_xml):
         self.xsl=xsl

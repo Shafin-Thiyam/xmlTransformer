@@ -34,26 +34,28 @@ if len(sys.argv) > 2:
 else:
     build = 0
 
-class Trans(object):
+class Trans:
 
-    def POST(self, publication):
+    def POST(self):
 
         out_data = {}
 
-        x = web.input(input_file={},xsl_file={})
+        x = web.input()
+        input_f=x.input_file
+        xsl_f=x.xsl_file
 
         dir_path = os.path.dirname(__file__)
 
-        if 'input_file' in x and 'xsl_file' in x:
+        if input_f!='' and xsl_f!='':
 
             work_dir = os.path.join(dir_path, '__work__', datetime.now().strftime("%Y%m%d%H%M%S%f") + "_" + random.choice('ABCDEFGHIJKL') )
             if not os.path.exists(work_dir):
                 os.makedirs(work_dir)
 
-            file_path = x.input_file.filename.replace('\\', '/')  # replaces the windows-style slashes with linux ones.
-            xsl_file_path = x.xsl_file.filename.replace('\\', '/')  # replaces the windows-style slashes with linux ones.
-            file_name = file_path.split('/')[-1]
-            xsl_file_name = xsl_file_path.split('/')[-1]
+            #file_path = input_f.filename.replace('\\', '/')  # replaces the windows-style slashes with linux ones.
+            #xsl_file_path = xsl_f.filename.replace('\\', '/')  # replaces the windows-style slashes with linux ones.
+            file_name = input_f.split('\\')[-1]
+            xsl_file_name = xsl_f.split('\\')[-1]
             input_file = os.path.join(work_dir, file_name)
             xsl_file = os.path.join(work_dir, xsl_file_name)
             with open(input_file, 'wb') as saved:
@@ -112,6 +114,6 @@ def get_build():
 
 if __name__ == "__main__":
     #register()
-    app.run()
+    app.run(host='127.0.0.1')
     # unregister()
 

@@ -1,18 +1,31 @@
-from bottle import route, run, template
-from bottle import get, post, request # or route
+import os
+import shutil
+from bottle import route, request, static_file, run
+import os
+from bottle import route, request, static_file, run
 
-@route('/hello/<name>')
-def index(name):
-    return template('<b>Hello {{name}}</b>!', name=name)
+@route('/')
+def root():
+    return static_file('test.html', root='.')
 
-@post('/login') # or @route('/login', method='POST')
-def do_login():
-    username = request.forms.get('username')
-    password = request.forms.get('password')
-    if username=='shafin' and password=='hamna':
-        return "Your login information was correct."+username+"</p><p>Your login information was correct."+password+"</p>"
-    else:
-        return "Login failed."
+@route('/login', method='POST')
+def do_upload():
+    category = request.forms.get('category')
+    upload = request.files.get('upload')
+    save_path = "/tmp/{category}".format(category=category)
+    file_path = "{path}/{file}".format(path=save_path, file=upload.filename)
+    name, ext = os.path.splitext(upload.filename)
+    if ext not in ('.txt','.xml', '.xsl', '.xslt'):
+        return "File extension not allowed."
 
 
-run(host='localhost', port=8080, debug=True)
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
+
+
+    upload.save(file_path)
+    return "File successfully saved to '{0}'.".format(save_path)
+
+
+if __name__ == '__main__':
+    run(host='localhost', port=8080)
