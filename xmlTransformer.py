@@ -16,6 +16,7 @@ class xmlTransformer(object):
     def tranformation(self):
         print("Transforming {} to {}".format(self.input_xml,self.output_xml))
         os.system("java net.sf.saxon.Transform -s:{0} -xsl:{1} -o:{2}".format(self.input_xml,self.xsl,self.output_xml))
+        print("Transformation Done")
 
 if __name__=='__main__':
     if len(sys.argv) == 4:

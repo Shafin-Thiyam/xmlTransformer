@@ -4,7 +4,7 @@ from datetime import datetime
 import shutil
 import json
 import random
-import sys
+import sys,requests
 from bottle import route, run, template
 from bottle import get, post, request # or route
 
@@ -47,6 +47,9 @@ def transform():
         return "<p>invalid input</p>"
 
 
-run(host='localhost', port=1323, debug=True)
+run(port=1323, debug=True)
 
-#run(port=1323, debug=True)
+#run(host='0.0.0.0', port=1323, debug=True)
+#url=
+
+
