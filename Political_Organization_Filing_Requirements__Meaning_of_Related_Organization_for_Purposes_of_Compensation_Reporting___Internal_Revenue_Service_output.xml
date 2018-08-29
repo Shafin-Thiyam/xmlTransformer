@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agency.artifact>
+   <irs.document>
+      <date.line datetime="000000">000000</date.line>
+      <irs.document.metadata>
+         <content.long.title>
+            <individual.title>
+			Political Organization Filing Requirements: Meaning of
+			Related Organization for Purposes of Compensation Reporting | Internal
+			Revenue Service
+					Related Organization for Purposes of Compensation Reporting
+			Political Organization Filing Requirements: Meaning of
+			Related Organization for Purposes of Compensation Reporting | Internal
+			Revenue Service
+		</individual.title>
+         </content.long.title>
+         <agency.source.name/>
+         <filing.information>
+            <filing.date>
+               <date.line/>
+            </filing.date>
+         </filing.information>
+      </irs.document.metadata>
+      <irs.document.body>
+         <error.message type="content" code="no-display-title-found"/>
+         <para>
+            <paratext>
+               <bold>What is a<ital>related organization</ital>for purposes of reporting compensation paid by related organizations on Form 990?</bold>
+            </paratext>
+         </para>
+         <para>
+            <paratext>A<ital>related</ital>organization is any organization that meets one of the following tests:</paratext>
+         </para>
+         <para>
+            <ul>
+               <li>Fifty percent or more of the political organization's officers, directors, trustees or key employees are also officers, directors, trustees or key employees of the other organization.</li>
+               <li>The political organization appoints fifty percent or more of the other organization's officers, directors, trustees or key employees.</li>
+               <li>Fifty percent or more of the political organization's officers, directors, trustees or key employees are appointed by the other organization.</li>
+            </ul>
+         </para>
+      </irs.document.body>
+   </irs.document>
+</agency.artifact>
