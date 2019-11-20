@@ -15,7 +15,8 @@ class xmlTransformer(object):
 
     def tranformation(self):
         print("Transforming {} to {}".format(self.input_xml,self.output_xml))
-        os.system("java net.sf.saxon.Transform -s:{0} -xsl:{1} -o:{2}".format(self.input_xml,self.xsl,self.output_xml))
+        #os.system("java net.sf.saxon.Transform -s:{0} -xsl:{1} -o:{2}".format(self.input_xml,self.xsl,self.output_xml))
+        os.system("java -Xss2m -Xmx512m -cp saxon-9.1.0.8.jar net.sf.saxon.Transform -xsl:{1} -s:{0} -o:{2}".format(self.input_xml,self.xsl,self.output_xml))
         print("Transformation Done")
 
 if __name__=='__main__':
